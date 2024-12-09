@@ -22,6 +22,9 @@ body {
   height: 80px;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header__text {
@@ -41,6 +44,10 @@ body {
   background: #140523;
   color: #ffffff;
   height: 48px;
+  position: fixed; /* Fixes the footer at the bottom */
+  bottom: 0;
+  left: 0;
+  z-index: 5; /* Ensures footer is above the body but below the header */
 }
 
 /**
@@ -53,6 +60,7 @@ body {
   padding: 3% 10%;
   scroll-margin-top: 100px;
   border-radius: 2rem;
+  position: relative; /* Establishes the card as a reference for absolute positioning */
 }
 
 .card__heading {
@@ -68,6 +76,9 @@ body {
   padding: 6px 12px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  position: absolute; /* Positions the bookmark relative to the .card */
+  top: 10px; /* Distance from the top of the card */
+  right: 10px; /* Distance from the right of the card */
 }
 
 /**
@@ -87,4 +98,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed; /* Fixes the button in place */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  right: 20px; /* Distance from the right of the viewport */
+  z-index: 15; /* Keeps the button above all other content */
 }
