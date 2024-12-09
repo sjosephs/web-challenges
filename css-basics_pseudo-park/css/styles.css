@@ -18,10 +18,13 @@
   overflow: hidden;
   border-radius: 8px;
   background-color: lightgoldenrodyellow;
+  padding: auto;
 }
 
 .animal {
-  padding: 16px;
+  padding: 9px;
+  font-size: 32px;
+  display: block;
 
   /*
     The animals are very small.
@@ -29,7 +32,13 @@
     Set the font size to 32px.
   */
 }
+.giraffe {
+  text-align: center;
+}
 
+.dino {
+  text-align: right;
+}
 /*
   The giraffe is afraid of the crocodile and the dino.
    - Center the giraffe in the park.
@@ -37,6 +46,17 @@
 
   💡 Select the animals by their class names and use the text-align property.
 */
+.crocodile:hover {
+  background-color: lightblue;
+}
+
+.giraffe:hover {
+  background-color: lightgreen;
+}
+
+.dino:hover {
+  background-color: lightsalmon;
+}
 
 /* 
   The animals want some color! 🎨
