@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  :root {
+    /* Defining custom vars*/
+    --color-granite: rgb(37 38 41);
+    --color-nemo: #ff4a11;
+    --color-foam: #ffffff;
+  }
+}
 body {
   margin: 0;
   font-family: system-ui;
