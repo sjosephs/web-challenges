@@ -10,6 +10,16 @@ console.clear();
 
 // --v-- write your code here --v--
 
+const titleOfBook = "JavaScript";
+const authorOfBook = "Jonas";
+let ratingOfBook = 4;
+let numberOfCopiesSold = 79;
+
+console.log("The Title of the Book is: ", titleOfBook);
+console.log("The Author of the Book is: ", authorOfBook);
+console.log("The Rating of the Book is: ", ratingOfBook);
+console.log("The Number of Copies Sold is: ", numberOfCopiesSold);
+
 // --^-- write your code here --^--
 
 /*
@@ -28,6 +38,15 @@ Then:
 
 // --v-- write your code here --v--
 
+ratingOfBook = 5;
+numberOfCopiesSold += 20;
+
+console.log("\nAfter updates:");
+console.log("The Title of the Book is: ", titleOfBook);
+console.log("The Author of the Book is: ", authorOfBook);
+console.log("The Rating of the Book is: ", ratingOfBook);
+console.log("The Number of Copies Sold is: ", numberOfCopiesSold);
+
 // --^-- write your code here --^--
 
 /*
@@ -40,5 +59,21 @@ Then:
 */
 
 // --v-- write your code here --v--
+
+function logBookData() {
+  console.log("The Title of the Book is: ", titleOfBook);
+  console.log("The Author of the Book is: ", authorOfBook);
+  console.log("The Rating of the Book is: ", ratingOfBook);
+  console.log("The Number of Copies Sold is: ", numberOfCopiesSold);
+}
+logBookData();
+
+console.log("\n After Updates");
+
+numberOfCopiesSold += 10;
+logBookData();
+
+numberOfCopiesSold += 40;
+logBookData();
 
 // --^-- write your code here --^--
