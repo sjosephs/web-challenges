@@ -14,15 +14,17 @@ function showTosError() {
   tosError.removeAttribute("hidden");
 }
 
-function showSuccessMessage() {
-  successMessage.removeAttribute("hidden");
-}
+// Create new function to hide abd show new Success message
 
 function hideSuccessMessage() {
   successMessage.setAttribute("hidden", "");
 }
 
-hideTosError(); // hide error message intitially
+function showSuccessMessage() {
+  successMessage.removeAttribute("hidden");
+}
+
+hideTosError(); // Initially hide error message before it is submitted
 hideSuccessMessage(); // Initially hide success message
 
 // Add a submit event listener to the form
@@ -31,8 +33,12 @@ form.addEventListener("submit", (event) => {
 
   // --v-- write your code here --v--
 
+  // If checkbox = true, I want to be able to work with my form and
+  // If check box = false do nothing
+
   // Check if the TOS checkbox is checked
   if (!tosCheckbox.checked) {
+    // ! If checkbox = false
     showTosError();
     hideSuccessMessage();
     return; // Early return to prevent further execution
@@ -49,8 +55,9 @@ form.addEventListener("submit", (event) => {
   alert("Form submitted");
 });
 
-/*
 // Add a change event listener to the TOS checkbox to toggle the error message
+
+// The message should disappear as soon as the user checks the checkboox - and it should reappear as soon as the user unchecks the checkbox.
 tosCheckbox.addEventListener("change", () => {
   if (tosCheckbox.checked) {
     hideTosError();
@@ -58,4 +65,3 @@ tosCheckbox.addEventListener("change", () => {
     showTosError();
   }
 });
-*/
