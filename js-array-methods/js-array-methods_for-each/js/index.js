@@ -19,4 +19,26 @@ const colors = [
   "#A5A5A5",
 ];
 
-colors.forEach();
+const container = document.querySelector("body");
+
+colors.forEach((color) => {
+  const colorBox = document.createElement("div");
+  colorBox.classList.add("color-box");
+  colorBox.style.backgroundColor = color;
+  container.appendChild(colorBox);
+});
+
+console.log("---------------- Task 2 ------------------");
+
+// Select the container where the boxes will be added
+// const container = document.querySelector("body");
+
+// Function to render a single color box
+function renderColorBox(color) {
+  const colorBox = document.createElement("div"); // Create a new div
+  colorBox.classList.add("color-box"); // Add the "color-box" class
+  colorBox.style.backgroundColor = color; // Set the background color to the given color
+  container.appendChild(colorBox); // Append the div to the container
+}
+
+colors.forEach(renderColorBox); // Use forEach with the function reference to create the color boxes
