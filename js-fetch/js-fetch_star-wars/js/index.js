@@ -37,10 +37,26 @@ const EXAMPLE_DATA = {
 const firstCard = Card(EXAMPLE_DATA);
 renderElement(firstCard);
 
-fetchDataAndRender();
+// Fetch data and render cards
+async function fetchDataAndRender() {
+  // --v-- your code below this line --v--
+  //try {
+  console.log("Fetching data...");
+  const response = await fetch("https://swapi.py4e.com/api/people");
+  console.log("Response received:", response);
+  const data = await response.json();
+  console.log("Data converted to JSON:", data); // Make sure there are results before proceeding
 
-// --v-- your code below this line --v--
-
-function fetchDataAndRender() {
-  fetch(); // ?
+  // Use forEach to create and render a card for each character
+  if (data.results) {
+    data.results.forEach((character) => {
+      const characterCard = Card(character);
+      renderElement(characterCard);
+    });
+  }
 }
+// catch (error) {
+//     console.error("Error fetching data:", error);
+//   }
+// }
+fetchDataAndRender();
