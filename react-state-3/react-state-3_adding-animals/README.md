@@ -21,7 +21,7 @@ Congratulations, you can now add a new animal to the state and it is rendered!
 
 ### Adding a unique identifier
 
-There is, however, a warning regarding the `key` prop in list items. This happens becaus newly added items currently don't have an `id` to be used by the `./src/components/List/index.jsx` component. There is a package called `uid` already installed to fix this.
+There is, however, a warning regarding the `key` prop in list items. This happens because newly added items currently don't have an `id` to be used by the `./src/components/List/index.jsx` component. There is a package called `uid` already installed to fix this.
 
 - In your `App`, import `uid` via `import { uid } from "uid";`.
 - A new animal is added inside of the `handleAddAnimal` function, which is where you need to add the id.
