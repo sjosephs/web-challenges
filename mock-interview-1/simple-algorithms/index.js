@@ -129,7 +129,12 @@ const wordsCount = [
 
 function howManyTimes(haystack, needle) {
   // TODO:
+  let count = 0;
+  haystack.foreach((word) => {
+    if (word === needle) count++;
+  });
 }
+return count;
 
 function countRepetitions(words) {
   let count = 0;
@@ -161,6 +166,17 @@ const mixedArray = [
 
 function sum(array) {
   // TODO:
+  let count = 0;
+  array.forEach((item) => {
+    if (typeof item === "string") {
+      count += item.length;
+    } else if (typeof item === "boolean") {
+      item ? count++ : null;
+    } else {
+      count += item;
+    }
+  });
+  return count;
 }
 
 // Bonus: Write a function that calculates the greatest product of four
@@ -233,6 +249,32 @@ const matrix = [
 
 function greatestProduct(matrix) {
   // TODO:
+  let maxProduct = 0;
+
+  // Check horizontally
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length - 3; j++) {
+      const product =
+        matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3];
+      if (product > maxProduct) {
+        maxProduct = product;
+      }
+    }
+  }
+
+  // Check vertically
+  for (let i = 0; i < matrix.length - 3; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      const product =
+        matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j];
+      if (product > maxProduct) {
+        maxProduct = product;
+      }
+    }
+  }
+
+  return maxProduct;
 }
 
 module.exports = {
