@@ -59,6 +59,7 @@ const products = [
 ];
 
 export function getAllProducts() {
+  console.log("Products array:", products);
   return products;
 }
 
