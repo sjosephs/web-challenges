@@ -46,7 +46,7 @@ export default function Product() {
     });
 
     if (response.ok) {
-      await response.json();
+      // await response.json();
       router.push("/"); // Redirect to home after delete
     } else {
       console.error(`Error: ${response.status}`);
@@ -54,22 +54,25 @@ export default function Product() {
   }
   return (
     <ProductCard>
-      {isEditMode && (
+      {isEditMode ? (
         <ProductForm onSubmit={handleEditProduct} heading="Edit Product" />
+      ) : (
+        <>
+          <h2>{data.name}</h2>
+          <p>Description: {data.description}</p>
+          <p>
+            Price: {data.price} {data.currency}
+          </p>
+          <Button type="button" onClick={() => setIsEditMode(!isEditMode)}>
+            Edit
+          </Button>
+          {/* Add DELETE button */}
+          <Button type="button" onClick={() => handleDeleteProduct(id)}>
+            Delete
+          </Button>
+          <StyledLink href="/">Back to all</StyledLink>
+        </>
       )}
-      <h2>{data.name}</h2>
-      <p>Description: {data.description}</p>
-      <p>
-        Price: {data.price} {data.currency}
-      </p>
-      <Button type="button" onClick={() => setIsEditMode(!isEditMode)}>
-        Edit
-      </Button>
-      {/* Add DELETE button */}
-      <Button type="button" onClick={() => handleDeleteProduct(id)}>
-        Delete
-      </Button>
-      <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
 }
